@@ -2,9 +2,7 @@
 
 ## Chci se učit ##
 
-Aktuální build PDF je ve složce `pdf/`:
-
-- :blue_book: Aktuální PDF build se nachází vždy na **[https://bit.ly/spi2017](https://bit.ly/spi2017)**.
+:blue_book: Aktuální **PDF build** se nachází vždy na **[https://bit.ly/spi2017](https://bit.ly/spi2017)**.
 
 ## Chci přispět ##
 
