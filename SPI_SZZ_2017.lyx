@@ -13337,6 +13337,8 @@ Probíhá nějaký časově souvislý děj (např.
  Počet emisí mezi dvěma časovými úseky je vždy nezávislý na ostatních úsecích.
  Počet naměřených emisí závisí jenom na délce úseku a ne na jeho umístění.
  Emise v čase jsou vždy rovnoměrně distribuovány.
+ Celý proces má Poissonovo rozdělení, rozdělení intervalů mezi událostmi
+ je exponenciální.
 \end_layout
 
 \begin_layout Plain Layout
@@ -13515,6 +13517,10 @@ intenzitou
 
 \begin_layout Enumerate
 \begin_inset Formula $N\left(0\right)=0$
+\end_inset
+
+, 
+\begin_inset Formula $s<t\Rightarrow N\left(s\right)\leq N\left(t\right)$
 \end_inset
 
 ;
@@ -16163,8 +16169,15 @@ Všimněte si, že v každé větvi mám pak úplně nový Poissonův proces (je
 \end_inset
 
 ).
- Tyto dvě “nové” intenzity se nazývají jump rates neboli skokové intenzity
- a značí se 
+ Tyto dvě 
+\begin_inset Quotes gld
+\end_inset
+
+nové
+\begin_inset Quotes grd
+\end_inset
+
+ intenzity se nazývají jump rates neboli skokové intenzity a značí se 
 \begin_inset Formula $q\left(i,j\right)$
 \end_inset
 
@@ -16215,8 +16228,8 @@ Zajímavé je pak to, že tyto nové intenzity jsou přesně tato derivace (pro
 \begin{align*}
 q\left(i,j\right) & =\left.\frac{\text{d}\,p_{t}\left(i,j\right)}{\text{d}t}\right|_{t=0}\\
  & =\ldots\\
- & =\lim_{h\rightarrow0^{+}}\frac{p_{h}\left(i,j\right)}{h}\\
- & =\lim_{h\rightarrow0^{+}}\lambda\mathrm{e}^{-h\lambda}u\left(i\,,j\right)\\
+ & =\lim_{h\rightarrow0}\frac{p_{h}\left(i,j\right)}{h}\\
+ & =\lim_{h\rightarrow0}\lambda\mathrm{e}^{-h\lambda}u\left(i\,,j\right)\\
  & =\highlight{\lambda*u\left(i,j\right)}
 \end{align*}
 
@@ -16236,7 +16249,7 @@ target "https://docs.google.com/document/d/106a4c7arU0t8JJMneHMWMEqarFDHsve3twnh
 
 \end_inset
 
-, Lecture14/Slide12]
+, Lecture14/Slide12+16]
 \end_layout
 
 \begin_layout Section
