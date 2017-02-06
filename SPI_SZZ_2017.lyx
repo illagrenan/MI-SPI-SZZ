@@ -320,12 +320,12 @@ Souhrn látky k SZZ 2017
 \begin_layout Date
 
 \size large
-5.
+6.
  února 2017
 \begin_inset Newline newline
 \end_inset
 
-verze 0.4.2
+verze 0.5.0
 \end_layout
 
 \begin_layout Standard
@@ -639,9 +639,9 @@ leden
 \begin_layout Description
 
 \family typewriter
-0.4.
+0.4.0
 \family default
-0
+
 \begin_inset space \quad{}
 \end_inset
 
@@ -655,6 +655,26 @@ leden
 
 2017 Celý úvod je nyní samostatná část.
  Rozšířeny odhady parametrů.
+\end_layout
+
+\begin_layout Description
+
+\family typewriter
+0.5.0
+\family default
+
+\begin_inset space \quad{}
+\end_inset
+
+6.
+\begin_inset space ~
+\end_inset
+
+února
+\begin_inset space ~
+\end_inset
+
+2017 Doplněny birth-and-death procesy+bugfixes.
 \end_layout
 
 \begin_layout Section*
@@ -6485,6 +6505,38 @@ Motivace
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+exhyphenpenalty=10
+\backslash
+hyphenpenalty=10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Marginal
 status open
 
@@ -6500,6 +6552,20 @@ Z
 \end_inset
 
 výběru odhadujeme statistiky populace.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -10228,7 +10294,9 @@ Rozeznáváme dva základní typy testů: parametrické testy jsou testy o hodno
 \end_layout
 
 \begin_layout Subsection
-Chyby I a II druhu
+Chyby I.
+ a II.
+ druhu
 \end_layout
 
 \begin_layout Standard
@@ -12864,19 +12932,6 @@ end{tcolorbox}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-chybí birth and death markovský reťazec
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \series bold
 Užitečné zdroje a odkazy:
@@ -13067,16 +13122,24 @@ status open
 
 
 \backslash
-colorbox{yellow}{
+colorbox{lightblue}{
 \end_layout
 
 \end_inset
 
-Poissonův proces 
+
+\shape italic
+Markovův řetězec se spojitým časem 
 \series bold
 je
 \series default
- Markovův řetězec se spojitým časem.
+ 
+\series bold
+časován
+\series default
+ Poissonovým procesem.
+\shape default
+
 \begin_inset ERT
 status open
 
@@ -15017,7 +15080,7 @@ Dále platí, že prvek
 
 
 \series bold
-vícekroková pravděpobnost
+vícekroková pravděpodobnost
 \series default
 ), že Markovův řetězec začínající ve stavu 
 \begin_inset Formula $s_{i}$
@@ -15950,7 +16013,7 @@ faLock
 
 \begin_layout Standard
 Mějme Poissonův proces 
-\begin_inset Formula $N\left(t\right),\,t\geq0$
+\begin_inset Formula $\left\{ N\left(t\right),\,t\geq0\right\} $
 \end_inset
 
  s
@@ -15961,8 +16024,7 @@ intenzitou
 \begin_inset Formula $\lambda$
 \end_inset
 
-.
- A Markovův řetězec s
+ a Markovův řetězec s
 \begin_inset space ~
 \end_inset
 
@@ -15995,7 +16057,7 @@ X_{t}=Y_{N\left(t\right)}
 
 \end_inset
 
-je Markovův řetězec se 
+je Markovův řetězec (někdy též Markovův proces) se 
 \series bold
 spojitým časem
 \series default
@@ -16021,7 +16083,12 @@ ostí
 status open
 
 \begin_layout Plain Layout
-Toto je stejné jako u DTMC.
+Přechodová pravděpodobnost je stejná jako u DTMC, jen se jinak značí.
+ Značení vychází z faktu, že matice přechodů se zde značí 
+\begin_inset Formula $U$
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -16074,7 +16141,7 @@ p_{t}\left(i,j\right)=P\left(X_{t}=j|X_{0}=i\right)
 platí
 \begin_inset Formula 
 \begin{align*}
-\boxed{p_{t}\left(i,j\right)} & =\sum_{n=0}^{\infty}P\left(N\left(t\right)=n\,X_{t}=j|X_{0}=i\right)\\
+\boxed{p_{t}\left(i,j\right)} & =\sum_{n=0}^{\infty}P\left(N\left(t\right)=n,\,X_{t}=j|X_{0}=i\right)\\
  & =\ldots\\
  & =\boxed{\sum_{n=0}^{\infty}\frac{\left(t\lambda\right)^{x}}{x!}\mathrm{e}^{-t\lambda}u^{n}\left(i\,,j\right)}
 \end{align*}
@@ -16269,11 +16336,85 @@ Intenzita přechodu (Jump rate)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-Řetězce se spojitým časem, vztah jump rate a pravděpodobnosti
+
+{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+exhyphenpenalty=10
+\backslash
+hyphenpenalty=10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{blue!20}{
+\backslash
+faLightbulbO}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\shape italic
+\size normal
+\color purple
+Intenzity přechodu potřebujeme, abychom převedli CTMC na
+\begin_inset space ~
+\end_inset
+
+DTMC.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -16492,6 +16633,183 @@ target "https://docs.google.com/document/d/106a4c7arU0t8JJMneHMWMEqarFDHsve3twnh
 , Lecture14/Slide12+16]
 \end_layout
 
+\begin_layout Subsection
+Birth–death řetězce
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+exhyphenpenalty=10
+\backslash
+hyphenpenalty=10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\shape italic
+\size normal
+\color purple
+B–D řetězce používáme v systémech hromadné obsluhy.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Birth–death řetězce jsou speciální případ CTMC, kde existují jen dva druhy
+ přechodu:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes gld
+\end_inset
+
+birth
+\begin_inset Quotes grd
+\end_inset
+
+, který inkrementuje proměnnou stavu (přišel nový zákazník);
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes gld
+\end_inset
+
+death
+\begin_inset Quotes grd
+\end_inset
+
+, který snižuje proměnnou stavu (zákazník byl obsloužen).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BD-proces.png
+	lyxscale 90
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Birth–death řetězec.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+faWikipediaW
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "EnWiki/Birth–death_process"
+target "https://en.wikipedia.org/wiki/Birth%E2%80%93death_process"
+
+\end_inset
+
+]
+\end_layout
+
 \begin_layout Section
 Kolmogorov-Chapmanova rovnice
 \begin_inset space ~
@@ -16569,18 +16887,11 @@ status open
 \shape italic
 \size normal
 \color purple
-\begin_inset Quotes gld
-\end_inset
-
 Jaká je pravděpodobnost přechodu mezi dvěma stavy v
 \begin_inset space ~
 \end_inset
 
 určitém počtu kroků?
-\begin_inset Quotes grd
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -16714,7 +17025,7 @@ p_{s+t}\left(i,\,j\right)=\sum_{k}p_{s}\left(i\,,k\right)p_{t}\left(k,\,j\right)
 nebo v maticovém tvaru
 \begin_inset Formula 
 \[
-P\left(s+t\right)=P\left(s\right)*P\left(t\right)
+P\left(s+t\right)=P\left(s\right)*P\left(t\right)\text{\quadči alternativně\quad}P_{t}P_{s}=P_{t+s}
 \]
 
 \end_inset
@@ -16804,6 +17115,102 @@ faGraduationCap}{(*)}
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+exhyphenpenalty=10
+\backslash
+hyphenpenalty=10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{blue!20}{
+\backslash
+faLightbulbO}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\shape italic
+\size normal
+\color purple
+Necháme teoreticky běžet proces do nekonečna.
+ Ten se ustálí v
+\begin_inset space ~
+\end_inset
+
+nějakém vektoru např.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Formula $\pi=\left(20\,\%,\,30\,\%\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Po čase se některé Markovovy řetězce ustálí v nějakém stavu.
  Nechť je dán nerozložitelný Markovův řetězec s maticí pravděpodobností
  přechodu 
@@ -16815,8 +17222,12 @@ Po čase se některé Markovovy řetězce ustálí v nějakém stavu.
 \begin_inset Formula $\pi=\left(\pi_{1},\pi_{2},\ldots\right)$
 \end_inset
 
- se nazývá stacionární rozdělení tohoto ireducibilního Markovova řetězce,
- jestliže platí
+ se
+\begin_inset space ~
+\end_inset
+
+nazývá stacionární rozdělení tohoto ireducibilního Markovova řetězce, jestliže
+ platí
 \begin_inset Formula 
 \[
 \sum_{i}\pi_{i}P_{ij}=\pi_{j}
@@ -16831,7 +17242,7 @@ pro všechna
  neboli maticově
 \begin_inset Formula 
 \[
-\pi*P=\pi\text{,}
+\pi*P=\pi\text{\text{\quad resp. pro CTMC\quad}}\pi*P_{t}=\pi\text{,}
 \]
 
 \end_inset
@@ -16868,6 +17279,64 @@ Jinými slovy v dlouhodobém horizontu nehledě na počáteční stav je množst
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Dále platí věta, že 
+\begin_inset Formula $\pi$
+\end_inset
+
+ je stacionární rozdělení právě tehdy, když
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Připomeňme, že 
+\begin_inset Formula $Q$
+\end_inset
+
+ značí matici tranzientních stavů.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{blue!20}{
+\backslash
+faLightbulbO}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Ostatně jinou stejně použít nemůžeme, jelikož řetězec se stacionární distribucí
+ musí být aperiodický.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\pi*Q=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[CZ_Cvičení9/slide8]
 \end_layout
 
 \begin_layout Standard
@@ -16928,11 +17397,15 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
-colorbox{blue!20}{
+setlength{
 \backslash
-faLightbulbO}
+fboxsep}{4pt}
+\backslash
+colorbox{blue!30}{
+\backslash
+faLightbulbO}}
 \end_layout
 
 \end_inset
@@ -16997,43 +17470,6 @@ colorbox{yellow}{[FIXME]}
 
  splňuje podmínku detailní rovnováhy pak je stacionární distribucí, detailní
  rovnováha je vždy splněna v birth and death řetězcích)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Itemize
-
-\series bold
-Diskrétní
-\series default
-:
-\begin_inset Formula $\pi:\,\pi*Q=\pi$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\series bold
-Spojité
-\series default
-: 
-\begin_inset Formula $\pi:\,\pi*Q=0$
-\end_inset
-
- (Zadáno pomocí intenzit 
-\begin_inset Formula $\lambda$
-\end_inset
-
-) 
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -19092,6 +19528,62 @@ TODO
 \noindent
 \align right
 [Lecture15/Slide24, Lecture16/Slide13]
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Box ovalbox
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "70col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "10pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+Uf, jste na konci 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+faSmileO
+\end_layout
+
+\end_inset
+
+, přeji všem 
+\begin_inset Formula $\mathbb{P}\left(X\geq E\right)=1$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
