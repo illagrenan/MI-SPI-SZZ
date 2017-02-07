@@ -320,12 +320,12 @@ Souhrn látky k SZZ 2017
 \begin_layout Date
 
 \size large
-6.
+7.
  února 2017
 \begin_inset Newline newline
 \end_inset
 
-verze 0.5.0
+verze 0.5.1
 \end_layout
 
 \begin_layout Standard
@@ -16633,183 +16633,6 @@ target "https://docs.google.com/document/d/106a4c7arU0t8JJMneHMWMEqarFDHsve3twnh
 , Lecture14/Slide12+16]
 \end_layout
 
-\begin_layout Subsection
-Birth–death řetězce
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-exhyphenpenalty=10
-\backslash
-hyphenpenalty=10
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align left
-
-\shape italic
-\size normal
-\color purple
-B–D řetězce používáme v systémech hromadné obsluhy.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Birth–death řetězce jsou speciální případ CTMC, kde existují jen dva druhy
- přechodu:
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Quotes gld
-\end_inset
-
-birth
-\begin_inset Quotes grd
-\end_inset
-
-, který inkrementuje proměnnou stavu (přišel nový zákazník);
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Quotes gld
-\end_inset
-
-death
-\begin_inset Quotes grd
-\end_inset
-
-, který snižuje proměnnou stavu (zákazník byl obsloužen).
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-centering
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename images/BD-proces.png
-	lyxscale 90
-	width 70text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Birth–death řetězec.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align right
-[
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-faWikipediaW
-\end_layout
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset href
-LatexCommand href
-name "EnWiki/Birth–death_process"
-target "https://en.wikipedia.org/wiki/Birth%E2%80%93death_process"
-
-\end_inset
-
-]
-\end_layout
-
 \begin_layout Section
 Kolmogorov-Chapmanova rovnice
 \begin_inset space ~
@@ -17230,7 +17053,7 @@ nazývá stacionární rozdělení tohoto ireducibilního Markovova řetězce, j
  platí
 \begin_inset Formula 
 \[
-\sum_{i}\pi_{i}P_{ij}=\pi_{j}
+\sum_{i}\pi_{i}p_{ij}=\pi_{j}
 \]
 
 \end_inset
@@ -17242,7 +17065,7 @@ pro všechna
  neboli maticově
 \begin_inset Formula 
 \[
-\pi*P=\pi\text{\text{\quad resp. pro CTMC\quad}}\pi*P_{t}=\pi\text{,}
+\pi*P=\pi\text{,}
 \]
 
 \end_inset
@@ -17252,7 +17075,7 @@ pro všechna
 
 \begin_layout Standard
 přičemž všechny prvky vektoru jsou nenulové a 
-\begin_inset Formula $\sum_{i=1}\pi_{i}=1$
+\begin_inset Formula ${\displaystyle \sum_{i=1}\pi_{i}=1}$
 \end_inset
 
 .
@@ -17282,61 +17105,9 @@ Jinými slovy v dlouhodobém horizontu nehledě na počáteční stav je množst
 \end_layout
 
 \begin_layout Standard
-Dále platí věta, že 
-\begin_inset Formula $\pi$
-\end_inset
-
- je stacionární rozdělení právě tehdy, když
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Připomeňme, že 
-\begin_inset Formula $Q$
-\end_inset
-
- značí matici tranzientních stavů.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{blue!20}{
-\backslash
-faLightbulbO}
-\end_layout
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-Ostatně jinou stejně použít nemůžeme, jelikož řetězec se stacionární distribucí
- musí být aperiodický.
- 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\pi*Q=0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \noindent
 \align right
-[CZ_Cvičení9/slide8]
+[CZ_Cvičení6/slide02]
 \end_layout
 
 \begin_layout Standard
@@ -17469,7 +17240,166 @@ colorbox{yellow}{[FIXME]}
 \end_inset
 
  splňuje podmínku detailní rovnováhy pak je stacionární distribucí, detailní
- rovnováha je vždy splněna v birth and death řetězcích)
+ rovnováha je vždy splněna v 
+\shape italic
+birth–and–death
+\shape default
+ řetězcích)
+\end_layout
+
+\begin_layout Subsection
+Pro CTMC
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{yellow}{[FIXME]}
+\end_layout
+
+\end_inset
+
+
+\series bold
+
+\begin_inset space ~
+\end_inset
+
+
+\series default
+Tímto si nejsem 100% jistý.
+\end_layout
+
+\begin_layout Standard
+Vektor rozdělení 
+\begin_inset Formula $\pi$
+\end_inset
+
+ nazýváme stacionární rozdělení Markovova řetězce 
+\begin_inset Formula $X_{t}$
+\end_inset
+
+ , jestliže platí
+\begin_inset Formula 
+\[
+\pi=\pi P_{t}
+\]
+
+\end_inset
+
+pro každé 
+\begin_inset Formula $t\geq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Podobně jako v diskrétním případě lze zavést podmínky detailní rovnováhy
+ pro 
+\begin_inset Formula $\pi=\left(\pi_{1},\pi_{2},\ldots\right)$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\pi_{i}q_{i,j}=\pi_{j}q_{j,i}\,\forall i,\,j
+\]
+
+\end_inset
+
+Pokud jsou splněny, je 
+\begin_inset Formula $\pi$
+\end_inset
+
+ stacionární distribuce.
+\end_layout
+
+\begin_layout Standard
+Dále platí věta, že 
+\begin_inset Formula $\pi$
+\end_inset
+
+ je stacionární rozdělení právě tehdy, když
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Připomeňme, že 
+\begin_inset Formula $Q$
+\end_inset
+
+ značí matici tranzientních stavů.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{blue!20}{
+\backslash
+faLightbulbO}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Ostatně jinou stejně použít nemůžeme, jelikož řetězec se stacionární distribucí
+ musí být aperiodický.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\pi*Q=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[CZ_Cvičení9/slide08]
+\end_layout
+
+\begin_layout Subsection
+Více o tématu
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Balance_equation#Detailed_balance"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Markov_chain#Steady-state_analysis_and_limiting_distributions"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -17584,11 +17514,23 @@ target "https://www.fd.cvut.cz/department/k611/pedagog/K611THO_soubory/webskript
 \end_layout
 
 \begin_layout Itemize
-https://en.wikipedia.org/wiki/Queueing_theory
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Queueing_theory"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-https://en.wikipedia.org/wiki/Kendall's_notation
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Kendall's_notation"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -18960,6 +18902,332 @@ bez netrpělivosti
 
 \end_deeper
 \begin_layout Section
+Birth–and–death řetězce
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texorpdfstring{
+\backslash
+faGraduationCap}{(*)}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+exhyphenpenalty=10
+\backslash
+hyphenpenalty=10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\shape italic
+\size normal
+\color purple
+B–D řetězce používáme pro modelování systému hromadné obsluhy.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Birth–death řetězce jsou speciální případ CTMC, kde existují jen dva druhy
+ přechodu:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes gld
+\end_inset
+
+birth
+\begin_inset Quotes grd
+\end_inset
+
+, který inkrementuje proměnnou stavu (přišel nový zákazník);
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes gld
+\end_inset
+
+death
+\begin_inset Quotes grd
+\end_inset
+
+, který snižuje proměnnou stavu (zákazník byl obsloužen).
+\end_layout
+
+\begin_layout Standard
+Každý ze stavů řetězce představuje počet zákazníků v systému.
+ 
+\shape italic
+Jump rates 
+\shape default
+B&D (tj.
+ 
+\begin_inset Formula $q\left(i,j\right)$
+\end_inset
+
+) řetězce můžeme vyjádřit jako
+\begin_inset Formula 
+\begin{align*}
+q\left(n,n+1\right)= & \lambda_{n}\:\text{pro}\,0\leq n<N\\
+q\left(n,n-1\right)= & \mu_{n}\:\text{pro}\,0<n\leq N
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[Lecture16/Slide06]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/BD-proces.png
+	lyxscale 40
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Birth–death řetězec.
+ Systém přijímá požadavky s intenzitou 
+\begin_inset Formula $\lambda_{0},\lambda_{1},\ldots,\lambda_{N-1}$
+\end_inset
+
+, které odbavuje s intenzitou 
+\begin_inset Formula $\mu_{0},\mu_{2},\ldots,\mu_{N}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+faWikipediaW
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "EnWiki/Birth–death_process"
+target "https://en.wikipedia.org/wiki/Birth%E2%80%93death_process"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_layout Subsection
+
+\series bold
+Stacionární rozdělení
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{yellow}{[FIXME]}
+\end_layout
+
+\end_inset
+
+
+\series bold
+
+\begin_inset space ~
+\end_inset
+
+
+\series default
+V přednáškách a na cvičeních jsou uvedené jiné rovnice, jiné označení\SpecialChar ldots
+ celé
+ je to matoucí.
+ Přeji tedy příjemné zmatení a pokud něčemu z toho rozumíte, budu rád za
+\begin_inset space ~
+\end_inset
+
+doplnění.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(přednáška)
+\series default
+ Stacionární rozdělení B&D Markovského řetězce je
+\begin_inset Formula 
+\[
+\pi\left(n\right)=\frac{\lambda_{n-1}}{\mu_{n}}*\frac{\lambda_{n-2}}{\mu_{n-1}}*\cdots*\frac{\lambda_{0}}{\mu_{1}}*\pi\left(0\right)
+\]
+
+\end_inset
+
+za předpokladu, že platí
+\begin_inset Formula 
+\[
+\sum_{n=0}^{\infty}\pi\left(n\right)=1\quad\text{a}\quad\forall n\geq1:\,\pi\left(n\right)\geq0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[Lecture16/Slide07, Lecture16/Slide13]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+(cvičení)
+\series default
+ Stacionární rozdělení (detailní rovnováha):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{n}=\frac{\lambda}{\mu}\pi_{n-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[CZ_Cvičení10/slide05]
+\end_layout
+
+\begin_layout Section
 
 \series bold
 Sledované charakteristiky systémů hromadné obsluhy
@@ -18974,6 +19242,74 @@ Cílem teorie hromadné obsluhy je určit vztah mezi známými parametry systém
 charakteristikami ovlivňujícími kvantitu a kvalitu systému.
  Na základě těchto funkcí potom můžeme systém analyzovat a navrhnout optimální
  řešení.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{yellow}{[FIXME]}
+\end_layout
+
+\end_inset
+
+
+\series bold
+
+\begin_inset space ~
+\end_inset
+
+
+\series default
+Následující vzorce platí asi jen pro M/M/1.
+\end_layout
+
+\begin_layout Standard
+Míra vytížení 
+\begin_inset Formula $\rho$
+\end_inset
+
+, 
+\begin_inset Formula $\rho$
+\end_inset
+
+ musí být 
+\begin_inset Formula $\rho<1$
+\end_inset
+
+, aby systém pracoval
+\begin_inset Formula 
+\[
+\rho=\frac{\lambda}{\mu}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Intenzita obsluhy 
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{eqnarray*}
+\mu & = & \frac{1}{T_{S}}
+\end{eqnarray*}
+
+\end_inset
+
+kde 
+\begin_inset Formula $T_{S}$
+\end_inset
+
+ je doba obsluhy.
 \end_layout
 
 \begin_layout Standard
@@ -18997,92 +19333,6 @@ height "1pt"
 \series bold
 \bar under
 Parametry systémů
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\rho=\frac{\lambda}{\mu}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset VSpace -0.3cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-(
-\series bold
-míra vytížení
-\series default
-; 
-\begin_inset Formula $\rho$
-\end_inset
-
- musí být 
-\begin_inset Formula $\rho<1$
-\end_inset
-
-, aby systém pracoval)
-\begin_inset Newline newline
-\end_inset
-
-(
-\begin_inset Formula $\lambda$
-\end_inset
-
- – 
-\series bold
-intenzita příchodů
-\series default
-)
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{eqnarray*}
-\mu & = & \frac{1}{T_{S}}
-\end{eqnarray*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset VSpace -0.3cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-(
-\begin_inset Formula $\mu$
-\end_inset
-
- – 
-\series bold
-intenzita obsluhy
-\series default
-, 
-\begin_inset Formula $T_{S}$
-\end_inset
-
- – 
-\series bold
-doba obsluhy
-\series default
-)
 \end_layout
 
 \begin_layout Plain Layout
@@ -19245,67 +19495,6 @@ ch zákazníků za časovou jednotku;
 [Lecture15/Slide22]
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Subsection
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{yellow}{[FIXME]}
-\end_layout
-
-\end_inset
-
-
-\series bold
-
-\begin_inset space ~
-\end_inset
-
-Výstupní parametry
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Box Shaded
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-TODO
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 
 \series bold
@@ -19444,94 +19633,6 @@ N_{S} & = & \lambda*T_{S}
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-texorpdfstring{
-\backslash
-colorbox{yellow}{[FIXME]}}{[FIXME]}
-\end_layout
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\series bold
-Stacionární rozdělení
-\series default
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-texorpdfstring{
-\backslash
-faGraduationCap}{(*)}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Shaded
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-TODO
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align right
-[Lecture15/Slide24, Lecture16/Slide13]
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace vfill
 \end_inset
 
 
