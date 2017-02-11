@@ -320,12 +320,12 @@ Souhrn látky k SZZ 2017
 \begin_layout Date
 
 \size large
-7.
+12.
  února 2017
 \begin_inset Newline newline
 \end_inset
 
-verze 0.5.1
+verze 0.5.6
 \end_layout
 
 \begin_layout Standard
@@ -675,6 +675,28 @@ leden
 \end_inset
 
 2017 Doplněny birth-and-death procesy+bugfixes.
+\end_layout
+
+\begin_layout Description
+
+\family typewriter
+0.5.5
+\family default
+
+\begin_inset space \quad{}
+\end_inset
+
+8.
+\begin_inset space ~
+\end_inset
+
+února
+\begin_inset space ~
+\end_inset
+
+2017 Fix rekurentní vs.
+ absorpční vs.
+ tranzientní stav v DTMC.
 \end_layout
 
 \begin_layout Section*
@@ -6995,20 +7017,6 @@ faGraduationCap}{(*)}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Interval spolehlivosti = intervalový odhad nějakého parametru s danou pravděpodo
-bností = konfidenční interval pro daný parametr
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7056,6 +7064,13 @@ Interval s
 \end_inset
 
 danou přesností.
+ 
+\size default
+Interval spolehlivosti = intervalový odhad nějakého parametru s
+\begin_inset space ~
+\end_inset
+
+danou pravděpodobností = konfidenční interval pro daný parametr
 \end_layout
 
 \end_inset
@@ -7112,29 +7127,7 @@ tohoto důvodu se tyto intervaly uvádí na přesnostech nižších než
 \series bold
 konfidenční interval
 \series default
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{yellow}{[FIXME]}
-\end_layout
-
-\end_inset
-
- Někdy také interval spolehlivosti?
-\end_layout
-
-\end_inset
-
-, který značíme jako
+ (interval spolehlivosti), který značíme jako
 \begin_inset Formula 
 \[
 1-\alpha
@@ -7199,36 +7192,8 @@ P\left(X<x<Y\right)=1-\alpha
 \end_layout
 
 \begin_layout Standard
-Existují oboustranné 
-\size footnotesize
-(
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{yellow}{
-\end_layout
-
-\end_inset
-
-[FIXME]
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-: Více rozepsat)
-\size default
- a jednostranné intervalové odhady, jednostranné se dále dělí na levostranné
- a pravostranné.
+Existují oboustranné a jednostranné intervalové odhady, jednostranné se
+ dále dělí na levostranné a pravostranné.
 \end_layout
 
 \begin_layout Standard
@@ -8095,7 +8060,7 @@ Nechť
 \begin_layout Plain Layout
 Pro 
 \series bold
-odhad rozptylu
+bodový odhad rozptylu
 \series default
  
 \begin_inset Formula $\sigma^{2}$
@@ -15389,6 +15354,77 @@ Absorpční řetězce
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset Box Shadowbox
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "90col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "10pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Druhy stavů
+\end_layout
+
+\begin_layout Plain Layout
+Po opuštění nějakého stavu definujeme pravděpodobnost, že se systém do tohoto
+ stavu vrátí, následovně:
+\end_layout
+
+\begin_layout Itemize
+Je-li 
+\begin_inset Formula $p<1$
+\end_inset
+
+ je stav 
+\series bold
+tranzientní
+\series default
+;
+\end_layout
+
+\begin_layout Itemize
+Je li 
+\begin_inset Formula $p=1$
+\end_inset
+
+ je stav 
+\series bold
+rekurentní
+\series default
+ (přes den lítám po tranzientních stavech, ale večer se vždy dostanu do
+ postele);
+\end_layout
+
+\begin_layout Itemize
+Stav, který nemůžeme opustit, je stav 
+\series bold
+absorpční
+\series default
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Absorpční řetězce jsou takové řetězce, které 
 \series bold
 obsahují
@@ -15639,7 +15675,7 @@ kde
 \begin_inset Formula $R$
 \end_inset
 
- jsou absorpční (rekurentní) stavy;
+ jsou absorpční stavy;
 \end_layout
 
 \begin_layout Itemize
@@ -15778,7 +15814,7 @@ Pravděpodobnostní matice
 \end_layout
 
 \begin_layout Standard
-Pravděpodobnost, že spadneme do rekurentního stavu 
+Pravděpodobnost, že spadneme do absorpčního stavu 
 \begin_inset Quotes gld
 \end_inset
 
@@ -15863,6 +15899,493 @@ faGraduationCap}{(*)}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+texorpdfstring{
+\backslash
+colorbox{blue!20}{
+\backslash
+faLightbulbO}}{(!)}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Značení matic CTMC
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+exhyphenpenalty=10
+\backslash
+hyphenpenalty=10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\shape italic
+\size normal
+\color purple
+Můžeme převést: 
+\begin_inset Formula ${P_{t}\rightsquigarrow Q\rightsquigarrow U}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Z DTMC známe jedinou matici 
+\begin_inset Formula $P$
+\end_inset
+
+, ve které se nacházejí přechodové pravděpodobnosti.
+ V
+\begin_inset space ~
+\end_inset
+
+CTMC používáme následující matice:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+exhyphenpenalty=10
+\backslash
+hyphenpenalty=10
+\end_layout
+
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\shape italic
+\size normal
+\color purple
+\begin_inset Formula $P_{t}$
+\end_inset
+
+:
+\begin_inset space ~
+\end_inset
+
+Matice funkcí.
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Matice 
+\begin_inset Formula $P_{t}$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P_{t}=\begin{pmatrix}\cdots & \cdots\\
+\cdots & \cdots
+\end{pmatrix}\begin{array}{c}
+=\sum1\\
+=\sum1
+\end{array}
+\]
+
+\end_inset
+
+je 
+\series bold
+matice pravděpodobnosti přechodu
+\series default
+ ze stavu 
+\begin_inset Formula $i$
+\end_inset
+
+ do stavu 
+\begin_inset Formula $j$
+\end_inset
+
+ v čase 
+\begin_inset Formula $t$
+\end_inset
+
+, tato matice je časovaná Poissonovým procesem.
+ Platí, že řádky matice se musí rovnat 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ Prvky matice jsou nějaké 
+\series bold
+funkce
+\series default
+ (viz další sekci).
+\end_layout
+
+\begin_layout Itemize
+Matice 
+\begin_inset Formula $Q$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+Q=\begin{pmatrix}\cdots & \cdots\\
+\cdots & \cdots
+\end{pmatrix}\begin{array}{c}
+=\sum0\\
+=\sum0
+\end{array}
+\]
+
+\end_inset
+
+je 
+\series bold
+matice skokových intenzit
+\series default
+ (anglicky 
+\shape italic
+jump rates
+\shape default
+).
+ Prvky matice jsou 
+\begin_inset Quotes gld
+\end_inset
+
+lambdy
+\begin_inset Quotes grd
+\end_inset
+
+ – intenzity přeskoku (tedy 
+\begin_inset Formula $q\left(i,j\right)$
+\end_inset
+
+).
+ Platí, že řádky matice se musí rovnat 
+\begin_inset Formula $0$
+\end_inset
+
+, na
+\begin_inset space ~
+\end_inset
+
+diagonále se nacházejí záporné lambdy.
+ Uveďme příklad
+\begin_inset Formula 
+\[
+Q=\begin{pmatrix}-2\lambda & \lambda & \lambda\\
+\cdots & -\lambda & \lambda\\
+\lambda & \cdots & -\lambda
+\end{pmatrix}\begin{array}{c}
+=0\\
+=0\\
+=0
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Matice 
+\begin_inset Formula $U$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+U=\begin{pmatrix}\cdots & \cdots\\
+\cdots & \cdots
+\end{pmatrix}
+\]
+
+\end_inset
+
+je 
+\series bold
+matice diskrétních přechodových pravděpodobností v náhodném čase 
+\begin_inset Formula $t$
+\end_inset
+
+
+\series default
+.
+ De facto odpovídá přechodové matici 
+\begin_inset Formula $P$
+\end_inset
+
+ z DTMC (
+\series bold
+\color red
+nikoliv
+\series default
+\color inherit
+ 
+\begin_inset Formula $P_{t}$
+\end_inset
+
+!).
+ Její prvky odpovídají
+\begin_inset Formula 
+\[
+u_{ij}=\left(U\right)_{ij}=\begin{cases}
+\frac{\lambda_{ij}}{\lambda_{MAX}}=\frac{q\left(i,j\right)}{\lambda_{MAX}} & \text{pro\,}i\neq j\\
+1+\frac{\lambda_{ij}}{\lambda_{MAX}} & \text{pro\,}i=j
+\end{cases}
+\]
+
+\end_inset
+
+kde 
+\begin_inset Formula $\lambda_{MAX}$
+\end_inset
+
+ je největší součet odchozích skokových intenzit.
+ Touto maticí převedeme CTMC na DTMC.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+exhyphenpenalty=10
+\backslash
+hyphenpenalty=10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\shape italic
+\size normal
+\color purple
+Rozlišujeme matice 
+\begin_inset Formula $Q,\,P_{t},\,U$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Matice 
+\begin_inset Formula $P_{t}$
+\end_inset
+
+ a 
+\begin_inset Formula $Q$
+\end_inset
+
+ (resp.
+ a 
+\begin_inset Formula $U$
+\end_inset
+
+) mezi sebou můžeme převádět (
+\begin_inset Quotes gld
+\end_inset
+
+
+\begin_inset Formula $'$
+\end_inset
+
+
+\begin_inset Quotes grd
+\end_inset
+
+ značí derivaci):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+Q & =P_{t}'\left(t=0\right)\\
+P_{t}' & =Q*P_{t}\\
+P_{t}' & =P_{t}*Q
+\end{align}
+
+\end_inset
+
+Rovnici 
+\begin_inset Formula $\left(2\right)$
+\end_inset
+
+ nazýváme 
+\begin_inset Quotes gld
+\end_inset
+
+Kolmogorov's Backward Equation
+\begin_inset Quotes grd
+\end_inset
+
+, rovnici 
+\begin_inset Formula $\left(3\right)$
+\end_inset
+
+ nazýváme 
+\begin_inset Quotes gld
+\end_inset
+
+Kolmogorov's Forward Equation
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Aby rovnice platily, musí být řetězec homogenní.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[Lecture14/Slide32, CZ_Cvičení09/Slide07]
+\end_layout
+
+\begin_layout Subsection
+Definice
 \end_layout
 
 \begin_layout Standard
@@ -16084,11 +16607,6 @@ status open
 
 \begin_layout Plain Layout
 Přechodová pravděpodobnost je stejná jako u DTMC, jen se jinak značí.
- Značení vychází z faktu, že matice přechodů se zde značí 
-\begin_inset Formula $U$
-\end_inset
-
-.
 \end_layout
 
 \end_inset
@@ -16587,7 +17105,7 @@ Jump rates jsou součiny
  a přechodových pravděpodobností
 \begin_inset Formula 
 \[
-q\left(i,j\right)=\highlight{\lambda*u\left(i,j\right)}
+q\left(i,j\right)=\highlight{\lambda*u\left(i,j\right)},\,q\left(i.j\right)\in Q
 \]
 
 \end_inset
@@ -16609,14 +17127,18 @@ Zajímavé je pak to, že tyto nové intenzity jsou přesně tato derivace (pro
 \begin{align*}
 q\left(i,j\right) & =\left.\frac{\text{d}\,p_{t}\left(i,j\right)}{\text{d}t}\right|_{t=0}\\
  & =\ldots\\
- & =\lim_{h\rightarrow0}\frac{p_{h}\left(i,j\right)}{h}\\
- & =\lim_{h\rightarrow0}\lambda\mathrm{e}^{-h\lambda}u\left(i\,,j\right)\\
+ & =\lim_{h\rightarrow0^{+}}\frac{p_{h}\left(i,j\right)}{h}\\
+ & =\lim_{h\rightarrow0^{+}}\lambda\mathrm{e}^{-h\lambda}u\left(i\,,j\right)\\
  & =\highlight{\lambda*u\left(i,j\right)}
 \end{align*}
 
 \end_inset
 
+kde 
+\begin_inset Formula $p_{t}\left(i,j\right)\in P_{t}$
+\end_inset
 
+.
 \end_layout
 
 \begin_layout Standard
@@ -16937,6 +17459,10 @@ faGraduationCap}{(*)}
 
 \end_layout
 
+\begin_layout Subsection
+Pro DTMC
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -16998,20 +17524,12 @@ faLightbulbO}
 \shape italic
 \size normal
 \color purple
-Necháme teoreticky běžet proces do nekonečna.
+Necháme teoreticky běžet proces donekonečna.
  Ten se ustálí v
 \begin_inset space ~
 \end_inset
 
-nějakém vektoru např.
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Formula $\pi=\left(20\,\%,\,30\,\%\right)$
-\end_inset
-
-.
+nějakém vektoru pravděpodobností.
 \end_layout
 
 \end_inset
@@ -17210,20 +17728,12 @@ Pravděpodobnost přechodu z
 \end_layout
 
 \begin_layout Standard
-Detailní rovnováha (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{yellow}{[FIXME]}
-\end_layout
-
+Pokud 
+\begin_inset Formula $\pi$
 \end_inset
 
- k čemu to je? jak to souvisí se stacionární distribucí?)
+ splňuje podmínku detailní rovnováhy pak je stacionární distribucí, detailní
+ rovnováha je:
 \begin_inset Formula 
 \[
 \pi_{i}p_{i,j}=\pi_{j}p_{j,i}\,\forall i,\,j
@@ -17234,45 +17744,12 @@ colorbox{yellow}{[FIXME]}
 
 \end_layout
 
-\begin_layout Standard
-(Pokud 
-\begin_inset Formula $\pi$
-\end_inset
-
- splňuje podmínku detailní rovnováhy pak je stacionární distribucí, detailní
- rovnováha je vždy splněna v 
-\shape italic
-birth–and–death
-\shape default
- řetězcích)
-\end_layout
-
 \begin_layout Subsection
 Pro CTMC
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{yellow}{[FIXME]}
-\end_layout
-
-\end_inset
-
-
-\series bold
-
-\begin_inset space ~
-\end_inset
-
-
-\series default
-Tímto si nejsem 100% jistý.
+(Obecná pravidla a význam jsou stejná jako u DTMC)
 \end_layout
 
 \begin_layout Standard
@@ -17292,11 +17769,32 @@ Vektor rozdělení
 
 \end_inset
 
-pro každé 
+
+\series bold
+pro každé
+\series default
+ 
 \begin_inset Formula $t\geq0$
 \end_inset
 
 .
+ Počítat tyto rovnice je však nepraktické, jelikož prvky matice (
+\begin_inset Quotes gld
+\end_inset
+
+koeficienty
+\begin_inset Quotes grd
+\end_inset
+
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+) 
+\begin_inset Formula $P_{t}$
+\end_inset
+
+ jsou funkce (přesněji řečeno se jedná o soustavu rovnic s funkcemi).
 \end_layout
 
 \begin_layout Standard
@@ -17321,47 +17819,11 @@ Pokud jsou splněny, je
 \end_layout
 
 \begin_layout Standard
-Dále platí věta, že 
+Dále platí, že 
 \begin_inset Formula $\pi$
 \end_inset
 
  je stacionární rozdělení právě tehdy, když
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Připomeňme, že 
-\begin_inset Formula $Q$
-\end_inset
-
- značí matici tranzientních stavů.
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{blue!20}{
-\backslash
-faLightbulbO}
-\end_layout
-
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-Ostatně jinou stejně použít nemůžeme, jelikož řetězec se stacionární distribucí
- musí být aperiodický.
- 
-\end_layout
-
-\end_inset
-
-
 \begin_inset Formula 
 \[
 \pi*Q=0
@@ -17370,12 +17832,73 @@ Ostatně jinou stejně použít nemůžeme, jelikož řetězec se stacionární 
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+colorbox{red!30}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+Pozor!
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\series default
+ 
+\begin_inset Formula $Q$
+\end_inset
+
+ v CTMC značí matici skokových intenzit.
+ 
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align right
 [CZ_Cvičení9/slide08]
+\end_layout
+
+\begin_layout Subsection
+Detailní rovnováha
+\end_layout
+
+\begin_layout Standard
+V DTMC i CTMC slouží detailní rovnováha k ověření, zda nějaké 
+\begin_inset Formula $\pi$
+\end_inset
+
+ je stacionární distribuce.
+ Jestliže nalezneme 
+\begin_inset Formula $\pi$
+\end_inset
+
+ vyřešením rovnice 
+\begin_inset Formula $\pi P=\pi$
+\end_inset
+
+, pak toto 
+\begin_inset Formula $\pi$
+\end_inset
+
+ ověřovat nemusíme, je totiž vždy stacionární distribucí.
+ Avšak tuto rovnici se nám vždy nemusí podařit vyřešit či je příliš složitá,
+ a proto existuje detailní rovnováha – tou můžeme ověřit nějaký např.
+ odhad.
 \end_layout
 
 \begin_layout Subsection
@@ -19162,14 +19685,7 @@ colorbox{yellow}{[FIXME]}
 
 
 \series default
-V přednáškách a na cvičeních jsou uvedené jiné rovnice, jiné označení\SpecialChar ldots
- celé
- je to matoucí.
- Přeji tedy příjemné zmatení a pokud něčemu z toho rozumíte, budu rád za
-\begin_inset space ~
-\end_inset
-
-doplnění.
+V přednáškách a na cvičeních jsou uvedené trochu jiné rovnice.
 \end_layout
 
 \begin_layout Standard
@@ -19219,6 +19735,10 @@ za předpokladu, že platí
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Detailní rovnováha je vždy splněna v B&D řetězcích.
 \end_layout
 
 \begin_layout Standard
