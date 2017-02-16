@@ -320,12 +320,12 @@ Souhrn látky k SZZ 2017
 \begin_layout Date
 
 \size large
-12.
+14.
  února 2017
 \begin_inset Newline newline
 \end_inset
 
-verze 0.5.6
+verze 0.6.0
 \end_layout
 
 \begin_layout Standard
@@ -18371,21 +18371,22 @@ Kendallem klasifikace, která má v zkratce zakódované základní informace
 \begin_inset space ~
 \end_inset
 
-klasifikace byla rozšířena na pět znaků.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
+klasifikace byla rozšířena na pět znaků
+\begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-https://en.wikipedia.org/wiki/Kendall's_notation
+Grafická reprezentace pro zapamatování: 
+\begin_inset Formula $\boxed{\overset{\sim?}{\hookrightarrow}/\overset{\sim?}{\circlearrowleft}/\#\boxplus}/\#\interleave/\overset{?}{\interleave}$
+\end_inset
+
+.
 \end_layout
 
 \end_inset
 
-
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -18400,9 +18401,27 @@ target "https://www.fd.cvut.cz/department/k611/pedagog/K611THO_soubory/webskript
 \end_inset
 
 ]
-\end_layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\noindent
+\align right
 \begin_inset Formula 
 \[
 \boxed{\boldsymbol{A/B/X}}/Y/Z
@@ -18418,9 +18437,13 @@ target "https://www.fd.cvut.cz/department/k611/pedagog/K611THO_soubory/webskript
 \begin_inset Formula $A:$
 \end_inset
 
- Rozdělení příchodu jednotek do systému (střední počet jednotek, které vstoupí
- do systému během dané časové jednotky) aka Vstupní tok; Customer arrival
- patern (Interarrival time distribution)
+ 
+\series bold
+Rozdělení příchodu jednotek
+\series default
+ do systému (střední počet jednotek, které vstoupí do systému během dané
+ časové jednotky) aka Vstupní tok; Customer arrival patern (Interarrival
+ time distribution)
 \end_layout
 
 \begin_layout Labeling
@@ -18428,8 +18451,12 @@ target "https://www.fd.cvut.cz/department/k611/pedagog/K611THO_soubory/webskript
 \begin_inset Formula $B:$
 \end_inset
 
- Rozdělení doby obsluhy (střední počet obsloužených jednotek během dané
- časové jednotky); Service pattern (Service time ditritbuion)
+ 
+\series bold
+Rozdělení doby obsluhy
+\series default
+ (střední počet obsloužených jednotek během dané časové jednotky); Service
+ pattern (Service time ditritbuion)
 \end_layout
 
 \begin_layout Labeling
@@ -18437,8 +18464,12 @@ target "https://www.fd.cvut.cz/department/k611/pedagog/K611THO_soubory/webskript
 \begin_inset Formula $X:$
 \end_inset
 
- # paralelních serverů (kanálů, linek) – kolik „pracovníků“ zpracovává požadavky
-; Number of parallel servers
+ 
+\series bold
+# paralelních serverů
+\series default
+ (kanálů, linek) – kolik „pracovníků“ zpracovává požadavky; Number of parallel
+ servers
 \end_layout
 
 \begin_layout Labeling
@@ -18446,7 +18477,11 @@ target "https://www.fd.cvut.cz/department/k611/pedagog/K611THO_soubory/webskript
 \begin_inset Formula $Y:$
 \end_inset
 
- Kapacita fronty; System capacity
+ 
+\series bold
+Kapacita fronty
+\series default
+; System capacity
 \end_layout
 
 \begin_layout Labeling
@@ -18454,7 +18489,16 @@ target "https://www.fd.cvut.cz/department/k611/pedagog/K611THO_soubory/webskript
 \begin_inset Formula $Z:$
 \end_inset
 
- Chování fronty (režim fronty); Queueing discipline
+ 
+\series bold
+Chování fronty
+\series default
+ (režim fronty); Queueing discipline
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -18502,6 +18546,16 @@ Zabýváme se především těmito třemi modely systémů:
 \end_layout
 
 \begin_layout Standard
+
+\series bold
+Systémy 
+\begin_inset Formula $M/M/m$
+\end_inset
+
+ jsou postaveny na Markovském B&D řetězci!
+\end_layout
+
+\begin_layout Standard
 I když označení systému pětiznakovou Kendallovou klasifikací poskytuje všechny
  základní informace o systému, nepopisuje systém jednoznačně.
  Nejsou v něm zahrnuty systémy s
@@ -18516,8 +18570,27 @@ předbíhajícími zákazníky, systém s
 \begin_inset space ~
 \end_inset
 
-proměnnou dostupností obsluhy, režim obsazování linek apod..
- 
+proměnnou dostupností obsluhy, režim obsazování linek apod.
+\end_layout
+
+\begin_layout Standard
+Obslužný systém může být:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Otevřený
+\series default
+ – prvky se po obsloužení nevracejí do systému;
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Uzavřený
+\series default
+ – prvky se po obsloužení vracejí zpět do systému.
 \end_layout
 
 \begin_layout Subsection
@@ -19490,7 +19563,7 @@ status open
 \shape italic
 \size normal
 \color purple
-B–D řetězce používáme pro modelování systému hromadné obsluhy.
+B&D řetězce používáme pro modelování systému hromadné obsluhy.
 \end_layout
 
 \end_inset
@@ -19658,45 +19731,54 @@ target "https://en.wikipedia.org/wiki/Birth%E2%80%93death_process"
 ]
 \end_layout
 
+\begin_layout Standard
+Ukázka (příklad) matice skokových intenzit 
+\begin_inset Formula $Q$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+Q=\begin{pmatrix}-\lambda & \lambda\\
+\mu & -\left(\mu+\lambda\right) & \lambda\\
+ & \mu & -\left(\mu+\lambda\right) & \lambda\\
+ &  & \mu & -\left(\mu+\lambda\right) & \lambda\\
+\cdots & \cdots & \cdots & \cdots & \ddots
+\end{pmatrix}\begin{array}{c}
+\sum\text{row}=0\\
+\sum\text{row}=0\\
+\sum\text{row}=0\\
+\sum\text{row}=0\\
+\sum\text{row}=0
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align right
+[CZ_Cvičení10/slide04]
+\end_layout
+
 \begin_layout Subsection
 
 \series bold
-Stacionární rozdělení
+Stacionární rozdělení B&D řetězců
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-colorbox{yellow}{[FIXME]}
-\end_layout
-
+Stacionární rozdělení 
+\begin_inset Formula $\pi$
 \end_inset
 
-
-\series bold
-
-\begin_inset space ~
-\end_inset
-
-
-\series default
-V přednáškách a na cvičeních jsou uvedené trochu jiné rovnice.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-(přednáška)
-\series default
- Stacionární rozdělení B&D Markovského řetězce je
+ B&D Markovského řetězce je
 \begin_inset Formula 
 \[
-\pi\left(n\right)=\frac{\lambda_{n-1}}{\mu_{n}}*\frac{\lambda_{n-2}}{\mu_{n-1}}*\cdots*\frac{\lambda_{0}}{\mu_{1}}*\pi\left(0\right)
+\pi\left(n\right)=\frac{\lambda_{n-1}}{\mu_{n}}\pi\left(n-1\right)
 \]
 
 \end_inset
@@ -19713,23 +19795,17 @@ za předpokladu, že platí
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align right
-[Lecture16/Slide07, Lecture16/Slide13]
-\end_layout
+Dále platí pro 
+\begin_inset Formula $\pi$
+\end_inset
 
-\begin_layout Standard
-
-\series bold
-(cvičení)
-\series default
- Stacionární rozdělení (detailní rovnováha):
+ podmínky detailní rovnováhy:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\pi_{n}=\frac{\lambda}{\mu}\pi_{n-1}
+\pi_{i}*q\left(i,j\right)=\pi_{j}q\left(j,i\right)\;\forall i,j
 \]
 
 \end_inset
@@ -19738,30 +19814,35 @@ za předpokladu, že platí
 \end_layout
 
 \begin_layout Standard
-Detailní rovnováha je vždy splněna v B&D řetězcích.
+\noindent
+\align right
+[Lecture16/Slide07, CZ_Cvičení10/slide05]
 \end_layout
 
 \begin_layout Standard
-\noindent
-\align right
-[CZ_Cvičení10/slide05]
+Zdůrazněme, že:
+\end_layout
+
+\begin_layout Itemize
+Zápis 
+\begin_inset Formula $\pi\left(42\right)$
+\end_inset
+
+ je ekvivalentní 
+\begin_inset Formula $\pi_{42}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+stacionární rozdělení (distribuce) je výše definována rekurzivně.
 \end_layout
 
 \begin_layout Section
 
 \series bold
 Sledované charakteristiky systémů hromadné obsluhy
-\end_layout
-
-\begin_layout Standard
-Cílem teorie hromadné obsluhy je určit vztah mezi známými parametry systému
- a
-\begin_inset space ~
-\end_inset
-
-charakteristikami ovlivňujícími kvantitu a kvalitu systému.
- Na základě těchto funkcí potom můžeme systém analyzovat a navrhnout optimální
- řešení.
 \end_layout
 
 \begin_layout Standard
@@ -19785,11 +19866,30 @@ colorbox{yellow}{[FIXME]}
 
 
 \series default
-Následující vzorce platí asi jen pro M/M/1.
+Následující vzorce platí nejspíše jen pro 
+\begin_inset Formula $M/M/m$
+\end_inset
+
+ systémy.
 \end_layout
 
 \begin_layout Standard
-Míra vytížení 
+Cílem teorie hromadné obsluhy je určit vztah mezi známými parametry systému
+ a
+\begin_inset space ~
+\end_inset
+
+charakteristikami ovlivňujícími kvantitu a kvalitu systému.
+ Na základě těchto funkcí potom můžeme systém analyzovat a navrhnout optimální
+ řešení.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Míra vytížení
+\series default
+ (intenzita provozu) 
 \begin_inset Formula $\rho$
 \end_inset
 
@@ -19809,27 +19909,45 @@ Míra vytížení
 
 \end_inset
 
+Střední doba transakce (obsluhy, S–service)
+\begin_inset Formula 
+\[
+T_{S}=\frac{1}{\mu}
+\]
 
-\end_layout
-
-\begin_layout Standard
-Intenzita obsluhy 
-\begin_inset Formula $\mu$
 \end_inset
 
-
+Střední počet zákazníků ve frontě
 \begin_inset Formula 
-\begin{eqnarray*}
-\mu & = & \frac{1}{T_{S}}
-\end{eqnarray*}
+\[
+N_{Q}=\frac{\rho^{2}}{1-\rho}
+\]
+
+\end_inset
+
+Střední doba čekání ve frontě
+\begin_inset Formula 
+\[
+EW=\frac{\rho}{\mu-\lambda}
+\]
 
 \end_inset
 
 kde 
-\begin_inset Formula $T_{S}$
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mu$
 \end_inset
 
- je doba obsluhy.
+ je intenzita obsluhy;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\lambda$
+\end_inset
+
+ je intenzita příchodů.
 \end_layout
 
 \begin_layout Standard
