@@ -320,8 +320,8 @@ Souhrn látky k SZZ 2017
 \begin_layout Date
 
 \size large
-14.
- února 2017
+3.
+ května 2017
 \begin_inset Newline newline
 \end_inset
 
@@ -402,8 +402,8 @@ Vždy aktuální dokument se nachází na
 
 \begin_inset CommandInset href
 LatexCommand href
-name "http://bit.ly/spi2017"
-target "http://bit.ly/spi2017"
+name "https://bit.ly/spi-szz"
+target "https://bit.ly/spi-szz"
 
 \end_inset
 
@@ -697,6 +697,46 @@ leden
 2017 Fix rekurentní vs.
  absorpční vs.
  tranzientní stav v DTMC.
+\end_layout
+
+\begin_layout Description
+
+\family typewriter
+0.6.0
+\family default
+
+\begin_inset space \quad{}
+\end_inset
+
+3.
+\begin_inset space ~
+\end_inset
+
+května
+\begin_inset space ~
+\end_inset
+
+2017 Dropbox zrušil 
+\shape italic
+public
+\shape default
+ složky, uvádím tedy nový link na aktuální PDF build: 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://bit.ly/spi-szz"
+target "https://bit.ly/spi-szz"
+
+\end_inset
+
+ případně nezkrácená verze: 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.dropbox.com/s/4n9abkya8weduga/SPI_SZZ_2017.pdf?dl=1"
+target "https://www.dropbox.com/s/4n9abkya8weduga/SPI_SZZ_2017.pdf?dl=1"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section*
@@ -20585,6 +20625,22 @@ key "Friesl-2014"
 FRIESL, Michal.
  Pravděpodobnost a statistika hypertextově.
  Srpen 2014.
+ [online] Dostupné z:
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://home.zcu.cz/~friesl/hpsb/
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Bibliography
