@@ -2,7 +2,7 @@
 
 ## Chci se učit ##
 
-:blue_book: Aktuální **PDF build** se nachází vždy na **[https://bit.ly/spi2017](https://bit.ly/spi2017)**.
+:blue_book: Aktuální **PDF build** se nachází vždy na <del>[https://bit.ly/spi2017](https://bit.ly/spi2017)</del> **[https://bit.ly/spi-szz](https://bit.ly/spi-szz)** (:exclamation: 05/2017 nový link).
 
 ## Chci přispět ##
 
