@@ -320,12 +320,12 @@ Souhrn látky k SZZ 2017
 \begin_layout Date
 
 \size large
-3.
- května 2017
+12.
+ června 2017
 \begin_inset Newline newline
 \end_inset
 
-verze 0.6.0
+verze 0.6.1
 \end_layout
 
 \begin_layout Standard
@@ -737,6 +737,26 @@ target "https://www.dropbox.com/s/4n9abkya8weduga/SPI_SZZ_2017.pdf?dl=1"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Description
+
+\family typewriter
+0.6.1
+\family default
+
+\begin_inset space \quad{}
+\end_inset
+
+12.
+\begin_inset space ~
+\end_inset
+
+června
+\begin_inset space ~
+\end_inset
+
+2017 Typo fix via @wallejak.
 \end_layout
 
 \begin_layout Section*
